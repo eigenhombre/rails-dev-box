@@ -17,6 +17,7 @@ class apt_get_update {
     unless => "test -e ${home}/.rvm"
   }
 }
+
 class { 'apt_get_update':
   stage => preinstall
 }
@@ -103,6 +104,10 @@ package { 'build-essential':
 }
 
 package { 'git-core':
+  ensure => installed
+}
+
+package { 'emacs23':
   ensure => installed
 }
 
